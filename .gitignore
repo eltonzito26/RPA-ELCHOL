@@ -6,3 +6,8 @@
 *.png
 *.log
 __pycache__/
+# Archivos temporales y salidas del generador Word/PDF
+*.docx
+*.pdf
+_temp_word/
+~$*.docx
