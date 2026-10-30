@@ -1,0 +1,3 @@
+# Contexto de Kiro
+
+Aplicación local para procesar por lote fotos de DPI. Mantener: selección de carpetas, candidatos por contorno y por color, refinamiento de los cuatro lados con transiciones de color/luminancia, virtualización de esquinas redondeadas, validación de área/borde/texto OCR, corrección de perspectiva, orientación con posición de encabezado, firma y MRZ, 8 puntos de referencia, PNG apaisado con esquinas redondeadas, DPI fijo, carpeta de revisión para resultados dudosos e informe CSV. Nunca llamar final a un recorte dudoso ni modificar originales. No incluir fotos/documentos personales en el proyecto.
