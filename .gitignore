@@ -6,3 +6,4 @@
 *.png
 *.log
 __pycache__/
+.venv/
