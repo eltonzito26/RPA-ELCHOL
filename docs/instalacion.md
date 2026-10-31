@@ -1,0 +1,3 @@
+# Instalación
+
+Pendiente de redacción.

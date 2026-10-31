@@ -1,0 +1,3 @@
+# Privacidad
+
+Pendiente de redacción.
