@@ -1,0 +1,6 @@
+{
+  "Name": "Bot_ElChol",
+  "ProjectType": "Process",
+  "Description": "Proceso en blanco",
+  "MainFile": "Main.xaml"
+}

@@ -17,3 +17,8 @@ El paquete vive en `rpa_dpi/`. Ejecuta todo desde la raíz del repositorio:
 
 Pendiente de confirmar con la salida real del OCR (Sprint 1, T3): el formato exacto de la
 zona inferior del reverso (separadores, relleno '<') para armar los argumentos de `validar_par()`.
+
+# rpa_dpi — Armado en Word y exportación a PDF
+- Empareja imágenes recortadas de anverso y reverso según el nombre completo de la persona.
+- Genera documento tamaño Carta vertical con anverso arriba y reverso abajo en una sola página.
+- Exporta y verifica el archivo `<Nombre Completo>.pdf` y reporta caras faltantes (`ANVERSO` / `REVERSO`)

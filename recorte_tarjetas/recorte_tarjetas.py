@@ -469,7 +469,7 @@ class BatchCropper:
         dst.mkdir(parents=True, exist_ok=True)
         report = []
         review_dir = dst / "revision"
-        marks_dir = dst / "marcas_8_puntos"
+        marks_dir = dst.parent / "marcas_8_puntos" 
         try:
             ocr = RapidOCR()
         except Exception as exc:
