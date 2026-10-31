@@ -1,0 +1,65 @@
+OCR local de fotos de DPI guatemalteco
+======================================
+
+Qué hace
+--------
+- Ejecuta Tesseract OCR localmente (no carga fotos a internet).
+- Lee JPG/JPEG/PNG/TIF/TIFF/BMP, intenta rotaciones y mejoras de contraste. En el anverso vuelve a leer
+  el bloque debajo de NOMBRE/APELLIDOS de DPI antiguos y nuevos, incluidas etiquetas bilingües.
+- En el reverso reconoce la estructura MRZ `IDGTM`/`<<`, extrae nombre+apellido y busca CUI en el registro.
+- Crea copias renombradas, reporte.json y un ZIP de salida. Conserva intactas las fotos fuente.
+- Si se inicia con doble clic, permite seleccionar la carpeta de fotos y luego un Excel opcional.
+
+Instalación en Windows
+----------------------
+1. Instala Python 3.10+ y Tesseract OCR 5 con el idioma Spanish (spa).
+2. Extrae el ZIP y ejecuta instalar.bat.
+3. Ejecuta iniciar.bat; elige carpeta de fotos. En el selector siguiente elige `L_TODOS.csv` o cancela.
+   Para reintentar las fallidas, extrae el ZIP anterior y selecciona la carpeta de resultados completa o su subcarpeta `Revisar`. Al elegir la carpeta completa, el programa vuelve a leer sus imágenes en `Revisar` y omite `Procesadas`, para no duplicarlas. Con el registro CSV/Excel, los casos que ahora puedan confirmarse se guardarán en `Procesadas`.
+
+Uso por PowerShell
+------------------
+  py -3 ocr_dpi.py "C:\ruta\fotos"
+  py -3 ocr_dpi.py "C:\ruta\fotos" --registro "C:\ruta\L_TODOS.csv"
+  py -3 ocr_dpi.py "C:\ruta\fotos" --registro "C:\ruta\listado.xlsx" --tesseract "C:\Program Files\Tesseract-OCR\tesseract.exe"
+
+Excel de verificación (opcional)
+--------------------------------
+Acepta directamente `L_TODOS.csv` con su formato CADER (separador punto y coma, tres filas de encabezado,
+codificación Latin-1 y CUI en la décima columna). También acepta Excel: la primera hoja debe tener una fila
+de encabezados y una fila por persona. Encabezados sugeridos:
+  CUI | Nombres | Apellidos | Fecha nacimiento | Fecha vencimiento
+
+CUI y nombre son necesarios en Excel; fechas son opcionales. En `L_TODOS.csv`, se arma el nombre oficial
+con los tres nombres y los apellidos que estén llenos, y se obtiene la comunidad de la lista. La comparación
+prioriza CUI exacto. Si falta el CUI OCR, intenta una coincidencia de nombre muy alta y única. Si el CUI OCR
+no coincide, solo propone el nombre cuando es prácticamente idéntico y aun así envía el caso a Revisar para
+que se confirme el CUI. Las coincidencias ambiguas o ausentes van a Revisar. En Excel se lee la hoja activa.
+
+El registro puede completar el nombre oficial y comunidad al coincidir por CUI, incluso cuando el OCR no
+logra leer el nombre. En reversos, el archivo puede llevar un nombre y apellido del MRZ. Si el nombre OCR
+contradice el registro, o el CUI no coincide, el archivo va a Revisar. La lista CADER no trae fechas de
+nacimiento ni vencimiento: esas fechas se leen del DPI.
+Si tienes una hoja con fechas, agrega encabezados `Fecha nacimiento` y `Fecha vencimiento` para incluirlas
+y contrastar el vencimiento. Si faltan CUI, nombres o apellidos en Excel, algunos archivos quedan en Revisar.
+
+Resultado
+---------
+Crea por defecto <carpeta_fotos>_resultado junto a la carpeta elegida:
+- Procesadas/: copias con el formato “Nombres Apellidos - 1. Adverso.ext” o “Nombres Apellidos - 2. Reverso.ext”.
+- Revisar/: datos incompletos, vencimiento detectado, discrepancias o coincidencias dudosas.
+- reporte.json: nombre, nombres, apellidos, CUI OCR y CUI del registro, comunidad CADER, fechas, estado, validación,
+  archivo fuente/nuevo, confianza heurística y texto OCR.
+- <carpeta_fotos>_resultado.zip: compresión de la carpeta de salida.
+
+Privacidad y límites
+-------------------
+Todo el OCR se hace en este equipo. Las fotos se copian; los originales no se renombran ni modifican.
+El JSON y ZIP contienen datos personales: guárdalos con cuidado. La confianza es una heurística y no
+una probabilidad calibrada. El OCR puede fallar en imágenes borrosas, reflejos o texto pequeño; las fechas
+solo se aceptan cuando el texto de etiqueta y la fecha se reconocen de forma estructurada. Revisa a mano
+los elementos de Revisar y confirma el Excel antes de tomar decisiones.
+
+Tesseract se instala por separado. Tesseract, Python, OpenCV, Pillow, NumPy, pytesseract y openpyxl son
+herramientas gratuitas de código abierto, sujetas a sus licencias respectivas.
+
