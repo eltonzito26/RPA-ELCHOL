@@ -1,0 +1,17 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+site:
+  title: RPA DPI - MAGA El Chol
+  structure:
+    - type: section
+      key: documentacion
+      title: Documentación
+      path: documentacion
+      default: true
+      children:
+        - type: space
+          key: rpa-dpi-docs
+          title: RPA DPI
+          path: rpa-dpi
+          default: true
+          content:
+            directory: ./
