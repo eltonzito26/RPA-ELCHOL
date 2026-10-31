@@ -7,3 +7,6 @@
 *.log
 __pycache__/
 .venv/
+
+# Prueba manual con fotos reales (no subir)
+rpa_dpi/probar_real.py

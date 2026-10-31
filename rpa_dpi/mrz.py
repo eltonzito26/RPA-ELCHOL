@@ -24,7 +24,7 @@ from dataclasses import dataclass
 _OCR_DIGITOS = str.maketrans({"O": "0", "Q": "0", "I": "1", "L": "1", "|": "1"})
 _NUM = r"[0-9OQIL|]"
 
-_MARCADOR = re.compile(r"I[D0][OGQE6]TM")
+_MARCADOR = re.compile(r"[I1Ll|][D0][OGQE6]TM")
 _LINEA2 = re.compile(rf"({_NUM}{{7}})([MF<])({_NUM}{{7}})GTM")
 _SOLO_NOMBRE = re.compile(r"[A-Z<]+")
 

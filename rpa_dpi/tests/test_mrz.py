@@ -53,6 +53,13 @@ class TestParseMrz(unittest.TestCase):
     def test_marcador_con_error_ocr(self):
         self.assertEqual(parse_mrz([linea1().replace("IDGTM", "I0QTM")]).cui14, "1234567890123")
 
+    def test_marcador_con_primera_letra_confundida(self):
+        for primera in ("1", "l", "|", "I"):
+            with self.subTest(primera=primera):
+                d = parse_mrz([linea1().replace("IDGTM", primera + "DGTM")])
+                self.assertEqual(d.cui14, "1234567890123")
+        self.assertIsNone(parse_mrz([linea1().replace("IDGTM", "XDGTM")]).cui14)   # otra letra: no se adivina
+
     def test_sexo_no_especificado(self):
         d = parse_mrz([linea2(sexo="<")])
         self.assertIsNone(d.sexo)
