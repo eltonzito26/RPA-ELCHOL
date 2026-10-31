@@ -2,6 +2,9 @@
 
 Lógica de negocio en Python (independiente de UiPath).
 
+El paquete vive en `rpa_dpi/`. Ejecuta todo desde la raíz del repositorio:
+
+    pip install -r rpa_dpi/requirements.txt
     python -m unittest discover -s rpa_dpi/tests -t . -v      # pruebas (datos sintéticos)
     CADER_XLSX=<libro.xlsx> python -m unittest discover -s rpa_dpi/tests -t .   # + libro real
     python -m rpa_dpi.listado <libro.xlsx>                    # informe de calidad (sin nombres ni CUI)
