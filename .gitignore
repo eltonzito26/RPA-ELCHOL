@@ -11,3 +11,15 @@ __pycache__/
 *.pdf
 _temp_word/
 ~$*.docx
+*.xlsx
+*.xls
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.log
+__pycache__/
+.venv/
+
+# Prueba manual con fotos reales (no subir)
+rpa_dpi/probar_real.py
