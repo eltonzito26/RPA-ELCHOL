@@ -46,14 +46,14 @@ Estado según lo que existe hoy en el repositorio. Debe confirmarse con el equip
 
 | ID | Tarea | Historia | Responsable |
 | --- | --- | --- | --- |
-| T1 | Preparar el entorno de desarrollo y las dependencias: UiPath, Python 3, OpenCV, Tesseract y librerías. | HU-13 | Por asignar |
-| T2 | Preparar datos de prueba: reales solo en la estación autorizada y sintéticos o anonimizados para las evidencias. | HU-13 | Por asignar |
-| T3 | Confirmar el formato de la zona inferior del reverso y el método de los dígitos de verificación con una muestra controlada. | HU-04 | Por asignar |
-| T4 | Probar OCR con Tesseract y una alternativa local en imágenes con rotación, desenfoque, sombra y reflejo. | HU-03 | Por asignar |
-| T5 | Cronometrar 10 casos manuales para reemplazar los supuestos del ROI. | HU-13 | Por asignar |
-| T6 | Inspeccionar la estructura del Excel maestro y verificar el recálculo de fórmulas con una copia de prueba. | HU-09 | Por asignar |
-| T7 | Comprobar la sincronización y el manejo de conflictos en Google Drive con datos no sensibles. | HU-10 | Por asignar |
-| T8 | Documentar precisión, excepciones, decisiones técnicas y resultados de la prueba de concepto. | HU-13 | Por asignar |
+| T1 | Preparar el entorno de desarrollo y las dependencias: UiPath, Python 3, OpenCV, Tesseract y librerías. | HU-13 | Gustavo |
+| T2 | Preparar datos de prueba: reales solo en la estación autorizada y sintéticos o anonimizados para las evidencias. | HU-13 | Josué |
+| T3 | Confirmar el formato de la zona inferior del reverso y el método de los dígitos de verificación con una muestra controlada. | HU-04 | José |
+| T4 | Probar OCR con Tesseract y una alternativa local en imágenes con rotación, desenfoque, sombra y reflejo. | HU-03 | Emilio |
+| T5 | Cronometrar 10 casos manuales para reemplazar los supuestos del ROI. | HU-13 | Gaspar |
+| T6 | Inspeccionar la estructura del Excel maestro y verificar el recálculo de fórmulas con una copia de prueba. | HU-09 | Josué |
+| T7 | Comprobar la sincronización y el manejo de conflictos en Google Drive con datos no sensibles. | HU-10 | Gustavo |
+| T8 | Documentar precisión, excepciones, decisiones técnicas y resultados de la prueba de concepto. | HU-13 | José |
 
 ## Plan de implementación
 
