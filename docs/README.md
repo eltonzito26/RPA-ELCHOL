@@ -41,9 +41,26 @@ El proyecto está en la fase de análisis y prueba de concepto.
 
 ## Cómo está organizada esta documentación
 
-- [Contexto](contexto.md): organización, problema, objetivo y alcance.
+**Entender el proyecto**
+
+- [Contexto](contexto.md): organización, problema, objetivo, alcance y retorno de la inversión.
 - [Flujo del proceso](flujo-del-proceso.md): los 14 pasos del flujo y dónde interviene una persona.
+- [Reglas de decisión](reglas-de-decision.md): identidad, emparejamiento, vigencia y estados.
+
+**Análisis y diseño**
+
+- [Diagramas](diagramas.md): proceso actual y propuesto, flujo de datos y modelos C4.
+- [Casos de uso](casos-de-uso.md): el caso principal con sus flujos alternativos y dos casos derivados.
+- [Arquitectura](arquitectura.md): componentes, decisiones de diseño, publicación en Drive y riesgos.
+
+**Implementación**
+
 - [Módulos](modulos.md): qué hace cada parte del código y cómo se conectan.
 - [Instalación](instalacion.md): cómo preparar el entorno en Windows y correr las pruebas.
-- [Reglas de decisión](reglas-de-decision.md): identidad, emparejamiento, vigencia y estados.
+- [Pruebas y criterios de aceptación](pruebas.md): estrategia, criterios y bloqueadores del piloto.
+
+**Gestión**
+
+- [Backlog y planificación](backlog-y-sprints.md): épicas, historias de usuario, avance y Sprint 1.
 - [Privacidad](privacidad.md): acceso, retención de datos y reglas para el repositorio.
+- [Glosario y preguntas frecuentes](glosario-y-faq.md): términos del proyecto y respuestas a dudas comunes.

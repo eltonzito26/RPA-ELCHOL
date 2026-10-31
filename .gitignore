@@ -23,3 +23,6 @@ __pycache__/
 
 # Prueba manual con fotos reales (no subir)
 rpa_dpi/probar_real.py
+
+# Excepción: imágenes de los diagramas de la documentación
+!docs/imagenes/*.png
